@@ -10,7 +10,7 @@ This version of svg2icoUpdt is exclusive to Windows.
 This extension was generated using Claude Sonnet 5
 This version of svg2icoUpdt requires Inkscape v1.x for built-in support for Pillow
 
-## Ejemplo de uso
+# Usage Example
 
 ![Paso 1](image%20(1).png)
 Click on "File" then on "Save as...".
