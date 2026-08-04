@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # coding=utf-8
 """
-svg2ico - Extension de exportacion para Inkscape 1.x
-Convierte el documento SVG actual a un archivo .ico de Windows
-con multiples resoluciones incrustadas, usando el propio binario
-de Inkscape para rasterizar y Pillow para empacar el .ico.
+svg2icoUpdt - Export extension for Inkscape 1.x
+Converts the current SVG document into a Windows .ico file
+with multiple embedded resolutions, using the Inkscape binary
+itself to rasterize and Pillow to package the .ico.
 """
 
 import io
@@ -54,9 +54,9 @@ class Svg2Ico(inkex.OutputExtension):
     def save(self, stream):
         if Image is None:
             raise inkex.AbortExtension(
-                "No se encontro el modulo Pillow (PIL) en el Python de "
-                "Inkscape. Reinstala Inkscape 1.x, que lo incluye por "
-                "defecto, o instala Pillow en el interprete que usa "
+                "The Pillow module (PIL) was not found in the Python of "
+                "Inkscape. Reinstall Inkscape 1.x, which includes it by "
+                "default, or install Pillow in the interpreter you are using for "
                 "Inkscape."
             )
 
@@ -78,12 +78,12 @@ class Svg2Ico(inkex.OutputExtension):
                     png_paths.append(png_path)
                 else:
                     inkex.errormsg(
-                        "Aviso: no se pudo generar el tamano {0}px, se omite.".format(size)
+                        "Alert: could not generate the {0}px size; skipping it.".format(size)
                     )
 
             if not png_paths:
                 raise inkex.AbortExtension(
-                    "No se genero ningun PNG intermedio; no es posible crear el .ico."
+                    "No intermediate PNG was generated; it is not possible to create the .ico file."
                 )
 
             images = []
@@ -128,8 +128,8 @@ class Svg2Ico(inkex.OutputExtension):
             return im.width
 
     def render_png(self, src_svg, out_png, size):
-        """Usa el binario de Inkscape para exportar un PNG cuadrado de
-        'size' x 'size' pixeles a partir del SVG fuente."""
+        """Use the Inkscape binary to export a square PNG of
+        'size' x 'size' pixels from the source SVG."""
         args = [
             src_svg,
             "--export-type=png",
@@ -143,7 +143,7 @@ class Svg2Ico(inkex.OutputExtension):
             run_inkscape(*args)
         except Exception as exc:
             inkex.errormsg(
-                "Error al rasterizar tamano {0}px: {1}".format(size, exc)
+                "Error rasterizing size {0}px: {1}".format(size, exc)
             )
 
 
