@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>Export as Windows Icon (.ico)</name>
+  <id>org.inkscape.output.svg2ico</id>
+
+  <param name="tab" type="notebook">
+    <page name="options" gui-text="Opciones">
+      <param name="sizes" type="string" gui-text="Sizes (px, separated by commas)">256,128,64,48,32,16</param>
+      <param name="dpi" type="int" min="32" max="2400" gui-text="Renderizing resolution (DPI)">96</param>
+    </page>
+    <page name="help" gui-text="Help">
+      <label>Exports the drawing as an .ico file with various sizes.
+
+Write the sizes in px ypu want to export to, example: 256,128,64,48,32,16
+
+It is reccomendated to use a square canvas.</label>
+    </page>
+  </param>
+
+  <output>
+    <extension>.ico</extension>
+    <mimetype>image/x-icon</mimetype>
+    <filetypename>Windows Icon (*.ico)</filetypename>
+    <filetypetooltip>Export to Windows icon format</filetypetooltip>
+    <dataloss>true</dataloss>
+  </output>
+
+  <script>
+    <command location="inx" interpreter="python">svg2icoUpdt.py</command>
+  </script>
+</inkscape-extension>
