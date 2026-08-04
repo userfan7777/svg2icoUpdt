@@ -12,15 +12,15 @@ This version of svg2icoUpdt requires Inkscape v1.x for built-in support for Pill
 
 # Usage Example
 
-![Paso 1](screenshots/image%20(1).png)
+![Step 1](screenshots/image%20(1).png)
 Click on "File" then on "Save as...".
-![Paso 2](screenshots/image%20(2).png)
+![Step 2](screenshots/image%20(2).png)
 On the Pop-Up windows select the little bar above title.
-![Paso 3](screenshots/image%20(3).png)
+![Step 3](screenshots/image%20(3).png)
 Then click on "Windows Icon (.ico)".
-![Paso 4](screenshots/image%20(4).png)
+![Step 4](screenshots/image%20(4).png)
 Then click on "Save".
-![Paso 5](screenshots/image%20(5).png)
+![Step 5](screenshots/image%20(5).png)
 Then it will require you to write the sizes you want your .ico to export to, the default selection normally works fine, then it will ask ypu the DPI you want.
-![Paso 6](screenshots/image%20(6).png)
+![Step 6](screenshots/image%20(6).png)
 Here is an example of the file working fine
