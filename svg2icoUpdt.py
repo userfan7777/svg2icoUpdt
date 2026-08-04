@@ -42,7 +42,7 @@ class Svg2Ico(inkex.OutputExtension):
                 continue
             if 1 <= val <= 1024:
                 sizes.append(val)
-        # quitar duplicados conservando orden, mayor a menor
+        # Remove duplicates while keeping order, largest to smallest
         seen = set()
         ordered = []
         for s in sorted(set(sizes), reverse=True):
@@ -62,8 +62,8 @@ class Svg2Ico(inkex.OutputExtension):
 
         sizes = self.parse_sizes()
 
-        # Guardar el documento actual (posiblemente con cambios no
-        # guardados en disco) a un SVG temporal para rasterizarlo.
+        # Save the current document (possibly with unsaved changes)
+        # to a temporary SVG file so it can be rasterized.
         tmp_dir = tempfile.mkdtemp(prefix="svg2ico_")
         src_svg = os.path.join(tmp_dir, "source.svg")
         with open(src_svg, "wb") as f:
@@ -94,10 +94,10 @@ class Svg2Ico(inkex.OutputExtension):
             base_img = images[0]
             ico_sizes = [(img.width, img.height) for img in images]
 
-            # Inkscape entrega en Windows un stream sin soporte para
-            # .tell(), que Pillow necesita para escribir un .ico.
-            # Por eso armamos el .ico en un buffer en memoria y luego
-            # copiamos los bytes ya listos al stream real.
+            # On Windows, Inkscape provides a stream without support for
+            # .tell(), which Pillow needs to write an .ico file.
+            # That's why we build the .ico in an in-memory buffer and
+            # then copy the finished bytes to the real stream.
             buffer = io.BytesIO()
             base_img.save(
                 buffer,
