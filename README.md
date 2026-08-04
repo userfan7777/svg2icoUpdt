@@ -8,3 +8,4 @@ Once you got your design and want to extract it just click on "File" and then "S
 This extension is not affiliated or related to the original creator of the original extension svg2ico
 This version of svg2icoUpdt is exclusive to Windows.
 This extension was generated using Claude Sonnet 5
+This version of svg2icoUpdt requires Inkscape v1.x for built-in support for Pillow
